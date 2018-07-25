@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title><%= pageTitle %></title>
+
+        <!-- style includes bootstrap -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel='stylesheet' href='/css/style.css' />
+
+    </head>
+    <body class="skin-default-light fixed-layout">
+
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader__figure"></div>
+                <p class="loader__label">Project Andes</p>
+            </div>
+        </div>
+
+
+        <div id="main-wrapper">
+
+            <%- include('component/topbar'); %>
+            <%- include('component/leftsidebar'); %>
+
+            <div class="page-wrapper">
+                <div class="container-fluid">
+
+                    <div class="row page-titles">
+                        <div class="col-md-5 align-self-center">
+                            <h4 class="text-themecolor">Dashboard</h4>
+                        </div>
+                        <div class="col-md-7 align-self-center text-right">
+                            <div class="d-flex justify-content-end align-items-center">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-lg-8">
+                            <div class="card oh">
+                                <div class="card-body">
+                                    <p>Body 1</p>
+                                </div>
+                                <div class="card-body bg-light">
+                                    <p>Body 2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary nav-lock" type="button">Nav Lock</button>
+                </div>
+            </div>
+
+        </div>
+    <!-- TODO build page! -->
+
+
+    <script type="text/javascript" src="<%= typeof local === undefined ? "/js/primary.min.js" : "/js/primary.js" %>"></script>
+    </body>
+</html>
