@@ -1,0 +1,76 @@
+<%#
+  # Project: ClassCompanionNode
+  # Date: 7/26/2018 4:41 PM
+  #
+  %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= pageTitle %></title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- style includes bootstrap -->
+    <link rel='stylesheet' href='/css/style.css'/>
+
+</head>
+<body class="skin-default-light">
+
+<div id="main-wrapper">
+
+    <div class="page-wrapper d-flex">
+        <div class="m-auto container">
+            <div class="card login-box rounded shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Login Form -->
+                            <form>
+                                <h3>Sign In</h3>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Email:</label>
+                                    <input type="text" class="col form-control" value="aad"/>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Password:</label>
+                                    <input type="password" class="col form-control"/>
+                                </div>
+                                <button type="submit" class="btn btn-success">Proceed</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Register Form -->
+                            <form method="post" action="/u/register" data-headers="true">
+                                <h3>Teacher Registration</h3>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Email:</label>
+                                    <input name="email" type="email" class="col form-control"/>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Confirm Email:</label>
+                                    <input name="email_confirmation" type="email" class="col form-control"/>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Password:</label>
+                                    <input name="password" type="password" class="col form-control"/>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Confirm Password:</label>
+                                    <input name="password_confirmation" type="password" class="col form-control"/>
+                                </div>
+                                <button class="btn btn-success">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="<%= typeof local === undefined ? "/js/primary.min.js" : "/js/primary.js" %>"></script>
+</body>
+</html>

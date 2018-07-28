@@ -275,8 +275,7 @@ a {
 
 a:not([href]):not([tabindex]) {
   color: inherit;
-  text-decoration: none;
-  }
+  text-decoration: none; }
   a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
     color: inherit;
     text-decoration: none; }
@@ -10807,8 +10806,9 @@ Mini sidebar
     left: 0px; }
 
   .navbar-header {
-    margin-left: 60px;
     flex-shrink: 0; }
+    body.mini-sidebar .navbar-header {
+      margin-left: 60px; }
     .navbar-header .navbar-brand {
       padding-top: 0px; }
 
@@ -11158,7 +11158,7 @@ File: scss
  Small Desktop & above all (1024px)
  ============================================================== */
 @media (min-width: 769px) {
-  .page-wrapper, .footer {
+  body.mini-sidebar .page-wrapper, body.mini-sidebar .footer {
     margin-left: 60px; } }
 @media (max-width: 1023px) {
   .inbox-center a {
@@ -11168,6 +11168,9 @@ File: scss
     display: block !important; }
     .d-flex.no-block {
       display: flex !important; } }
+body:not(.mini-sidebar) .nav-toggler {
+  display: none !important; }
+
 /*-- ==============================================================
  Ipad & above all(768px)
  ============================================================== */

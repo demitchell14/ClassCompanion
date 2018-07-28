@@ -32,7 +32,7 @@ File: scss
  ============================================================== */
 
 @media(min-width:769px) {
-  .page-wrapper, .footer {
+  body.mini-sidebar .page-wrapper, body.mini-sidebar  .footer {
     margin-left: 60px;
   }
 
@@ -51,7 +51,9 @@ File: scss
   }
 }
 
-
+body:not(.mini-sidebar) .nav-toggler {
+  display:none !important;
+}
 
 /*-- ==============================================================
  Ipad & above all(768px)

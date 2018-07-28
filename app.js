@@ -4,14 +4,19 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
-
+const cors = require('cors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const scheduleRouter = require('./routes/schedule');
 
 const DB = require('./bin/database');
 
+
 const app = express();
+
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
 
 app.set('trust proxy', 1);
 app.use(session({
@@ -39,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(['/users', '/u'], usersRouter);
 app.use('/schedule', scheduleRouter);
 
 // catch 404 and forward to error handler

@@ -1,0 +1,84 @@
+<%#
+  # Project: ClassCompanionNode
+  # Date: 7/26/2018 4:41 PM
+  #
+  %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= pageTitle %></title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- style includes bootstrap -->
+    <link rel='stylesheet' href='/css/style.css'/>
+
+</head>
+<body class="skin-default-light <%= typeof sidebar === "undefined" ? "mini-sidebar" : "" %>">
+
+    <div id="main-wrapper">
+        <% if (typeof topbar === "undefined" || topbar) { %>
+        <%- include('component/topbar'); %>
+        <% } %>
+
+        <% if (typeof sidebar === "undefined" || sidebar) { %>
+            <%- include('component/leftsidebar'); %>
+        <% } %>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <% if (typeof topbar === 'undefined' && typeof sidebar === 'undefined') { %>
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">Login</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb d-none">
+                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+
+                <div class="row">
+                    <% if (typeof frames !== "undefined") {
+                        switch (typeof frames) {
+                            case "string":
+                                %><%- include(frames) %><%
+                                break;
+                        }
+                    } %>
+                </div>
+
+                <div class="row">
+                    <div class="col col-md-6 offset-md-3">
+                        <div class="card rounded shadow">
+                            <div class="card-body ">
+                                <form>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Email:</label>
+                                        <input type="text" class="col form-control" value="aad"/>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Password:</label>
+                                        <input type="password" class="col form-control"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript"
+        src="<%= typeof local === undefined ? "/js/primary.min.js" : "/js/primary.js" %>"></script>
+</body>
+</html>

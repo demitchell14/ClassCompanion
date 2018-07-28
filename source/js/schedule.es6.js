@@ -2,8 +2,8 @@
 
 import $ from 'jquery';
 import './Interactions';
-import 'fullcalendar';
-import 'fullcalendar-scheduler';
+//import 'fullcalendar';
+//import 'fullcalendar-scheduler';
 
 import AssetBuilder from './components/AssetBuilder';
 import ClassManager from './components/ClassManager';
