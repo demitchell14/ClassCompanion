@@ -1,3 +1,9 @@
+/**
+ * TODO
+ * TODO edit connection values to allow for local database connections
+ * TODO
+ */
+
 const mysql       = require('mysql');
 
 
